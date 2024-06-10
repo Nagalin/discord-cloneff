@@ -4,7 +4,7 @@ import React from 'react'
 
 const DiscordSIgnInButton = () => {
     const handleSignIn = () => {
-        signIn('discord', { callbackUrl: '/homepage' })
+        signIn('discord', { callbackUrl: '/homepage/user' })
     }
 
     return (

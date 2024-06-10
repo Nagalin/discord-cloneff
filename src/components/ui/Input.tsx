@@ -1,18 +1,25 @@
-import { cva } from 'class-variance-authority'
-import clsx from 'clsx'
-import React, { InputHTMLAttributes } from 'react'
+import * as React from "react"
 
-type InputPropsType = InputHTMLAttributes<HTMLInputElement>
+import { cn } from "@/lib/utils"
 
-const inputVariant = cva('bg-black rounded rouned-lg p-3 text-white placeholder-white')
+export interface InputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {}
 
-const Input = ({className, ...props}: InputPropsType) => {
-  return (
-    <input 
-        className={clsx(inputVariant(),className)} 
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ className, type, ...props }, ref) => {
+    return (
+      <input
+        type={type}
+        className={cn(
+          "flex h-10 w-full rounded-md bg-black px-3 py-2 text-sm  file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+          className
+        )}
+        ref={ref}
         {...props}
-    />
-  )
-}
+      />
+    )
+  }
+)
+Input.displayName = "Input"
 
-export default Input
+export { Input }

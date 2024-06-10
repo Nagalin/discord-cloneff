@@ -4,7 +4,7 @@ import React from 'react'
 
 const GoogleSignInButton = () => {
   const handleSignIn = () => {
-    signIn('google', { callbackUrl: '/homepage' })
+    signIn('google', { callbackUrl: '/homepage/user' })
   }
 
   return (

@@ -31,6 +31,11 @@ const config = {
           'logo-yellow': '#fbbc05',
           'logo-red': '#ea4335',
         },
+        discord: {
+          'navbar': '#313338',
+          'direct-message-list': '#2B2D31',
+          'friend-list': '#313338'
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
