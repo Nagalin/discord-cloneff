@@ -3,6 +3,7 @@ import { useSession } from "next-auth/react";
 import { ReactNode } from "react";
 import { redirect } from "next/navigation";
 import Navbar from "./Navbar";
+import ServerList from "./user/components/ServerList";
 type LayoutPropsType = {
     children: ReactNode
 
@@ -14,8 +15,9 @@ export default function layout({children}: LayoutPropsType) {
     if(!session) redirect('/')
 
     return (
-        <div>
+        <div className="flex flex-wrap">
            <Navbar/>
+           <ServerList/>
             {children}
         </div>
     
